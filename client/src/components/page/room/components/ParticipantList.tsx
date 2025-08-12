@@ -59,6 +59,8 @@ export default function ParticipantList({
     }
   }
 
+
+
   return (
     <div className="flex-1 rounded-2xl border border-white/30 bg-white/90 p-4 shadow-lg backdrop-blur-sm">
       {/* 친구 초대 섹션 - 알약 스타일 */}
@@ -287,7 +289,7 @@ export default function ParticipantList({
         )}
       </div>
 
-      {/* START 버튼 */}
+      {/* START 버튼 (기존 Room StartButton 사용) */}
       {showStartButton && (
         <StartButton className="mt-6" onStartCall={onStartCall} />
       )}
