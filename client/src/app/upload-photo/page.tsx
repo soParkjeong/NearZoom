@@ -58,7 +58,7 @@ export default function UploadPhotoPage() {
       return decodedUrl
     } else if (fallbackRedirect) {
       // 혹시라도 남은 게 있으면 보조로 이동
-      localStorage.removeItem('redirectAfterLogin')
+      // localStorage는 실제 이동 시 삭제
       return fallbackRedirect
     } else if (action === 'createRoom') {
       // 메인페이지로 이동 (방 생성을 위해)
@@ -154,6 +154,10 @@ export default function UploadPhotoPage() {
 
       // 업로드 처리 후 반드시 목적지로 이동
       const destination = getRedirectDestination()
+      
+      // localStorage 정리
+      localStorage.removeItem('redirectAfterLogin')
+      
       router.replace(destination)
     } catch (error: any) {
       console.error('참조 이미지 저장 실패:', error)
@@ -166,11 +170,19 @@ export default function UploadPhotoPage() {
   // '시작하기', '취소', '나중에 등록', '닫기' 모두 동일하게 목적지로 이동
   const handleSkip = () => {
     const destination = getRedirectDestination()
+    
+    // localStorage 정리
+    localStorage.removeItem('redirectAfterLogin')
+    
     router.replace(destination)
   }
 
   const handleClose = () => {
     const destination = getRedirectDestination()
+    
+    // localStorage 정리
+    localStorage.removeItem('redirectAfterLogin')
+    
     router.replace(destination)
   }
 
