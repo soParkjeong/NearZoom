@@ -283,9 +283,13 @@ const TimelinePage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* 헤더 */}
           <div className="text-center mb-6">
-            <h1 className="text-2xl font-semibold text-gray-900 mb-2">
-              Timeline
-            </h1>
+            <div className="flex justify-center mb-2">
+              <img 
+                src="/timeline.svg" 
+                alt="Timeline" 
+                className="h-4 w-auto"
+              />
+            </div>
             <p className="text-gray-600 text-sm">
               친구들과 함께하는 순간들을 확인하세요
             </p>
